@@ -10,6 +10,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/hr_contract_inherit.xml',
+        # 'views/hr_contract_inherit.xml',
     ],
 }
