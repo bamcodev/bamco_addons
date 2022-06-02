@@ -9,7 +9,7 @@
 
                  <xpath expr="//sheet" position="before">
                     <header>
-                        <field name="state" widget="statusbar"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
                  </xpath>
 
