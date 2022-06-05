@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_document,hr document,model_hr_document,,1,1,1,1
+access_hr_document_binary,hr document binary,model_hr_document_binary,,1,1,1,1
+access_hr_document_type,hr document type,model_hr_document_type,,1,1,1,1
