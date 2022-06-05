@@ -5,9 +5,11 @@
     'author': "Centione",
     'website': "http://www.centione.com",
 
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr','hr_contract'],
 
     'data': [
+        'security/ir.model.access.csv',
         'views/views.xml',
+        'views/hr_contract_inherit.xml',
     ],
 }

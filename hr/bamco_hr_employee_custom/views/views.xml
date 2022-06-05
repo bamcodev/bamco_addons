@@ -7,6 +7,53 @@
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
 
+                 <xpath expr="//sheet" position="before">
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                 </xpath>
+
+                <xpath expr="//field[@name='identification_id']" position="attributes">
+                    <attribute name="string">رقم الهوية</attribute>
+
+                </xpath>
+                <xpath expr="//field[@name='job_title']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+
+                <xpath expr="//field[@name='private_email']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+
+                <xpath expr="//field[@name='work_location_id']" position="before">
+                    <field name="hiring_date"/>
+                </xpath>
+                <xpath expr="//field[@name='country_of_birth']" position="after">
+                    <field name="current_address"/>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="area"/>
+                    <field name="branch"/>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="after">
+                    <field name="private_mobile_no"/>
+                    <field name="personal_email"/>
+                    <field name="constatnt_phone_no"/>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='mobile_phone']" position="before">
+                    <xpath expr="//field[@name='job_id']" position="move"/>
+                </xpath>
+
+
                 <xpath expr="//field[@name='name']/.." position="after">
                     <h1 class="d-flex">
                         <field name="arabic_name" placeholder="الإسم بالعربي"/>
