@@ -56,7 +56,7 @@
 
                 <xpath expr="//field[@name='name']/.." position="after">
                     <h1 class="d-flex">
-                        <field name="arabic_name" placeholder="الإسم بالعربي" required="True"/>
+                        <field name="arabic_name" placeholder="الإسم بالعربي"/>
                     </h1>
                 </xpath>
 
