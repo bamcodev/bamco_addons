@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+<!--        <record id="action_set_checkin_out" model="ir.actions.server"  >-->
+<!--            <field name="name">Set Checks</field>-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="model_id" ref="model_hr_attendance"/>-->
+<!--            <field name="binding_model_id" ref="model_hr_attendance"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                if records:-->
+<!--                   action = records.set_checkin_out()-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_make_logged" model="ir.actions.server"  >
+            <field name="name">Make Logged</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="binding_model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                   action = records.make_logged()
+            </field>
+        </record>
+         <record id="action_set_users" model="ir.actions.server"  >
+            <field name="name">Set Users</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="binding_model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                   action = records._compute_user()
+            </field>
+        </record>
+        <record id="action_make_false_logged" model="ir.actions.server"  >
+            <field name="name">Make Logged False</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="binding_model_id" ref="bamco_zk_attendance.model_hr_attendance_zk_temp"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                   action = records.make_logged_false()
+            </field>
+        </record>
+    </data>
+
+</odoo>
