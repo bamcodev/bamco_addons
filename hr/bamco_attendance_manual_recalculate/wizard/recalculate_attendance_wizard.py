@@ -38,6 +38,7 @@ class recalculate_attendance_wizard(models.TransientModel):
             attendance_logs.write({'logged': False})
 
 
+
     def recalculate_data(self):
         if self.recalculate_attendance:
             #delete last attendance from starting date
