@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="recalculate_attendance_wizard_form" model="ir.ui.view">
+            <field name="name">recalculate_attendance_wizard_form</field>
+            <field name="model">recalculate.attendance.wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="start_date" />
+                            <field name="recalculate_attendance" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="recalculate_data" string="Recalculate" type="object" class="btn-primary" />
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="recalculate_attendance_wizard_action" model="ir.actions.act_window">
+            <field name="name">Recalculate Attendance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">recalculate.attendance.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="recalculate_attendance_menu"
+                  groups="bamco_attendance_manual_recalculate.recalculate_attendance_group"
+                  name="Recalculate Attendance" parent="hr_attendance.menu_hr_attendance_attendances_overview" action="recalculate_attendance_wizard_action" />
+
+
+    </data>
+</odoo>

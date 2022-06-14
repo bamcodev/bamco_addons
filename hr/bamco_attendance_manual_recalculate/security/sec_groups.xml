@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="recalculate_attendance_group" model="res.groups">
+            <field name="name">Recalculate Attendance Group</field>
+        </record>
+    </data>
+</odoo>

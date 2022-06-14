@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+recalculate_attendance_wizard,recalculate_attendance_wizard,model_recalculate_attendance_wizard,bamco_attendance_manual_recalculate.recalculate_attendance_group,1,1,1,1
