@@ -26,7 +26,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr','hr_attendance'],
+    'depends': ['base','hr','hr_attendance','bamco_hr_employee_custom'],
 
     # always loaded
     'data': [
