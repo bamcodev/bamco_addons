@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+<!--        <record id="view_transport_configuration_form" model="ir.ui.view">-->
+<!--             <field name="name">transport.configuration.form</field>-->
+<!--             <field name="model">hr.transport.configuration</field>-->
+<!--             <field name="arch" type="xml">-->
+<!--                 <form string="Transport">-->
+<!--                     <header>-->
+<!--                        <button string="Apply" type="object" name="act_execute" class="oe_highlight"/>-->
+<!--                    </header>-->
+<!--                     <sheet>-->
+<!--                         <group>-->
+<!--                             <field name="transport_rate"/>-->
+<!--                         </group>-->
+<!--                     </sheet>-->
+<!--                 </form>-->
+<!--             </field>-->
+<!--         </record>-->
+
+<!--        <record id="view_transport_configuration_action" model="ir.actions.act_window">-->
+<!--            <field name="name">transport.configuration.action</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">hr.transport.configuration</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="target">inline</field>-->
+<!--        </record>-->
+
+<!--        <menuitem id="hr_transport_rate_menu"-->
+<!--                  name="Transport Rate Configuration"-->
+<!--                  parent="hr_work_entry_contract.menu_hr_payroll_configuration"-->
+<!--                  action="view_transport_configuration_action"-->
+<!--                  sequence="1"/>-->
+    </data>
+</odoo>

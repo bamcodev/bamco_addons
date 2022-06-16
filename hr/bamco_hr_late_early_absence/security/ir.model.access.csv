@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_absence,hr_absence,model_hr_absence,,1,1,1,1
+access_absence_penalty_line,absence_penalty_line,model_absence_penalty_line,,1,1,1,1
+access_late_early_penalty_line,late_early_penalty_line,model_late_early_penalty_line,,1,1,1,1
+access_late_early_time_interval,late_early_time_interval,model_late_early_time_interval,,1,1,1,1

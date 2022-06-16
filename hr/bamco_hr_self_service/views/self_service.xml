@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+<!--        <record id="action_loan_form_view" model="ir.actions.act_window">-->
+<!--            <field name="name">Employees Loans</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">hr.loan</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--        </record>-->
+
+<!--        <menuitem-->
+<!--                id="menu_hr_self_service"-->
+<!--                name="Self Service"-->
+<!--        />-->
+<!--        <menuitem-->
+<!--                id="menu_hr_loan"-->
+<!--                name="Loan"-->
+<!--                action="action_loan_form_view"-->
+<!--                parent="menu_hr_self_service"-->
+<!--                sequence="99"-->
+<!--        />-->
+    </data>
+</odoo>

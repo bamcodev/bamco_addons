@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record id="custom_default_payroll_structure" model="hr.payroll.structure">
+            <field name="name">Default structure</field>
+            <field name="type_id" ref="custom_default_payroll_structure_type"/>
+        </record>
+    </data>
+</odoo>
