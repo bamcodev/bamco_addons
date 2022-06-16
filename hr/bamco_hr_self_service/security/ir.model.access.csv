@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_mission,access hr mission,model_hr_mission,,1,1,1,1
+access_hr_transport,access hr transport,model_hr_transport,,1,1,1,1
+access_hiring_request,access_hiring_request,model_hr_hiring_request,,1,1,1,1
+access_hr_excuse,access hr excuse,model_hr_excuse,,1,1,1,1
+access_hr_transport_configuration,access hr transport configuration,model_hr_transport_configuration,,1,1,1,1

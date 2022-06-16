@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="excel_download_wizard" model="ir.ui.view">
+            <field name="name">Download</field>
+            <field name="model">hr.attendance.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="file_name" invisible="1"/>
+                            <field name="excel_file" widget="binary" filename="file_name"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_stock_card_wizard_form" model="ir.ui.view">
+            <field name="name">hr.attendance.wizard.form</field>
+            <field name="model">hr.attendance.wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="start_date" required="1" autocomplete="off"/>
+                                <field name="end_date" required="1" autocomplete="off"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="employee_ids"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="stock_card_search" string="Generate Report" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="attendance_wizard_action" model="ir.actions.act_window">
+            <field name="name">Attendance Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.attendance.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="hr_attendance_report_menu" name="Attendance Report"
+                  parent="hr_attendance.menu_hr_attendance_root"
+                  action="attendance_wizard_action"/>
+
+
+    </data>
+</odoo>

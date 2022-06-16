@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+
+        <record id="resource_calendar_form_schedule_type" model="ir.ui.view">
+            <field name="name">Resource Calendar Form Schedule Type</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="resource.resource_calendar_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tz']" position="after">
+                    <field name="schedule_type"/>
+                    <field name="flexible_hours" widget="float_time"
+                           attrs="{'invisible': [('schedule_type', '!=', 'flexible')]}"/>
+                </xpath>
+
+<!--                <xpath expr="//field[@name='hours_per_day']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+
+                <xpath expr="//field[@name='attendance_ids']" position="replace">
+                    <field name="attendance_flexible_ids" attrs="{'invisible': [('schedule_type', '!=', 'flexible')]}">
+                        <tree editable="top">
+                            <field name="schedule_type" invisible="True"/>
+                            <field name="name"/>
+                            <field name="dayofweek"/>
+                            <field name="hour_from" widget="float_time"/>
+                            <field name="hour_from_flexible" widget="float_time"/>
+                            <field name="hour_to" widget="float_time"/>
+                            <field name="hour_to_flexible" widget="float_time"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="day_period"/>
+                        </tree>
+                    </field>
+
+                    <field name="attendance_ids" attrs="{'invisible': [('schedule_type', '!=', 'fixed')]}">
+                        <tree editable="top">
+                            <field name="schedule_type" invisible="True"/>
+                            <field name="name"/>
+                            <field name="dayofweek"/>
+                            <field name="hour_from" widget="float_time"/>
+                            <field name="hour_to" widget="float_time"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="day_period"/>
+                        </tree>
+                    </field>
+
+                    <group>
+                        <field name="hours_per_day" attrs="{'invisible': [('schedule_type', '!=', 'open')]}"/>
+                    </group>
+
+                </xpath>
+
+                <xpath expr="//notebook" position="after">
+                    <group string="Penalties">
+                        <notebook>
+                            <page string="Absence">
+                                <group>
+                                    <field name="absence_penalty_type"/>
+                                    <field name="absence_penalty_fixed_rate"
+                                           attrs="{'invisible': [('absence_penalty_type', '!=', 'fixed')]}"/>
+                                </group>
+                                <field name="absence_penalty_line_ids" nolabel="1"
+                                       attrs="{'invisible': [('absence_penalty_type', '!=', 'cumulative')]}">
+                                    <tree editable="bottom">
+                                        <field name="sequence"/>
+                                        <field name="penalty_rate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Late">
+                                <group>
+                                    <field name="late_arrive_penalty_type"/>
+                                    <field name="late_arrive_penalty_fixed_rate"
+                                           attrs="{'invisible': [('late_arrive_penalty_type', '!=', 'fixed')]}"/>
+                                </group>
+                                <field name="late_arrive_penalty_line_ids"
+                                       attrs="{'invisible': [('late_arrive_penalty_type', '!=', 'cumulative')]}">
+                                    <tree>
+                                        <field name="time_interval"/>
+                                        <field name="late_early_penalty_line_ids"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Early">
+                                <group>
+                                    <field name="early_leave_penalty_type"/>
+                                    <field name="early_leave_penalty_fixed_rate"
+                                           attrs="{'invisible': [('early_leave_penalty_type', '!=', 'fixed')]}"/>
+                                </group>
+                                <field name="early_leave_penalty_line_ids"
+                                       attrs="{'invisible': [('early_leave_penalty_type', '!=', 'cumulative')]}">
+                                    <tree>
+                                        <field name="time_interval"/>
+                                        <field name="late_early_penalty_line_ids"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
