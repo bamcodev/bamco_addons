@@ -8,3 +8,5 @@ class AbsencePenaltyLine(models.Model):
     sequence = fields.Integer(required=True)
     penalty_rate = fields.Float()
     resource_calendar_id = fields.Many2one('resource.calendar')
+
+    
