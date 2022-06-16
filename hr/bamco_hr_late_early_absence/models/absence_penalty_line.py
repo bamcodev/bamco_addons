@@ -1,6 +1,6 @@
 from odoo import models, fields, api, _
 
-
+ 
 class AbsencePenaltyLine(models.Model):
     _name = 'absence.penalty.line'
     _order = 'id asc, sequence asc'
