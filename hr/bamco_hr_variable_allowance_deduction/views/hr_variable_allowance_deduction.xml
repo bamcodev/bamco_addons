@@ -59,9 +59,9 @@
         </record>
 
         <menuitem id="menu_hr_variable_allowance_deduction"
-                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"
                   action="hr_variable_allowance_deduction"
-                  name="Variable Allowance Deduction" sequence="10"/>
+                  name="Variable Allowance Deduction" sequence="51"/>
 
     </data>
 </odoo>
