@@ -18,9 +18,6 @@
                                 <field name="code" required="1"/>
                             </group>
                             <group>
-                                <field name="category_ids" required="1" widget="many2many_tags"/>
-                            </group>
-                            <group>
                                 <field name="calculation_method" required="1"/>
                                 <field name="fixed_amount" attrs="{'invisible': [('calculation_method', '!=', 'fixed')]}"/>
                                 <field name="percentage_amount" attrs="{'invisible': [('calculation_method', '!=', 'percentage')]}"/>
@@ -55,7 +52,7 @@
         </record>
 
         <menuitem id="menu_hr_variable_allowance_deduction_type"
-                  parent="hr_work_entry_contract.menu_hr_payroll_configuration"
+                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
                   action="hr_variable_allowance_deduction_type"
                   name="Variable Allowance Deduction types" sequence="100"/>
 

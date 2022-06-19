@@ -7,32 +7,21 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <!--                        <div class="oe_title">-->
-                        <!--                            <label for="employee_id" class="oe_edit_only"/>-->
-                        <!--                            <h1><field name="employee_id" placeholder="Employee"/></h1>-->
-                        <!--                        </div>-->
+                        <div class="oe_title">
+                            <label for="employee_id" class="oe_edit_only"/>
+                            <h1><field name="employee_id" placeholder="Employee"/></h1>
+                        </div>
                         <group>
                             <group>
-                                <!--                                <field name="contract_id"/>-->
+                                <field name="contract_id"/>
                                 <field name="date"/>
                             </group>
-                            <!--                            <group>-->
-                            <!--                                <field name="type"/>-->
-                            <!--                                <field name="amount"/>-->
-                            <!--                            </group>-->
-
-                        </group>
-                        <group>
-                                <field name="variable_lines">
-                                    <tree editable="bottom">
-                                        <field name="employee_id"/>
-                                        <field name="type" widget="many2many_tags"/>
-                                        <field name="category_ids" widget="many2many_tags"/>
-                                        <field name="number_of_days"/>
-                                        <field name="total"/>
-                                    </tree>
-                                </field>
+                            <group>
+                                <field name="type"/>
+                                <field name="amount"/>
+                                <field name="add_amount"/>
                             </group>
+                        </group>
                         <group>
                             <field name="payslip_id" readonly="1"/>
                         </group>
@@ -46,24 +35,33 @@
             <field name="model">hr.variable.allowance.deduction</field>
             <field name="arch" type="xml">
                 <tree>
-<!--                    <field name="employee_id"/>-->
+                    <field name="employee_id"/>
                     <field name="date"/>
-<!--                    <field name="type"/>-->
-<!--                    <field name="amount"/>-->
+                    <field name="type"/>
+                    <field name="amount"/>
                 </tree>
+            </field>
+        </record>
+        <record id="hr_variable_allowance_deduction_search" model="ir.ui.view">
+            <field name="name">hr variable allowance deduction search</field>
+            <field name="model">hr.variable.allowance.deduction</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="employee_id"/>
+                </search>
             </field>
         </record>
 
         <record id="hr_variable_allowance_deduction" model="ir.actions.act_window">
-            <field name="name">استحقاقات واستقطاعات متغيرة</field>
+            <field name="name">Variable Allowance Deduction</field>
             <field name="res_model">hr.variable.allowance.deduction</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem id="menu_hr_variable_allowance_deduction"
-                  parent="hr_work_entry_contract.menu_hr_payroll_root"
+                  parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
                   action="hr_variable_allowance_deduction"
-                  name="استحقاقات واستقطاعات متغيرة" sequence="10"/>
+                  name="Variable Allowance Deduction" sequence="10"/>
 
     </data>
 </odoo>

@@ -9,8 +9,6 @@ class HrVariableAllowanceDeductionType(models.Model):
     type = fields.Selection([('allowance', 'Allowance'), ('deduction', 'Deduction')])
     code = fields.Char()
 
-    category_ids = fields.Many2many('hr.categories')
-
     calculation_method = fields.Selection([('fixed', 'Fixed'),
                                            ('percentage', 'Percentage'),
                                            ('work_day', 'Work day'),
@@ -37,7 +35,7 @@ class HrVariableAllowanceDeductionType(models.Model):
                 'category_id': self.env.ref('hr_payroll.ALW').id if self.type == 'allowance' else self.env.ref('hr_payroll.DED').id,
                 'sequence': 5,
                 'amount_select': 'code',
-                'amount_python_compute': 'result = inputs.%s.amount' % self.code,
+                'amount_python_compute':  'result = inputs.%s.amount'  % self.code if self.type == 'allowance' else 'result = -1*inputs.%s.amount'  % self.code,
                 'condition_select': 'python',
                 'condition_python': 'result = inputs.%s' % self.code,
                 'struct_id': self.env.ref('bamco_hr_payroll_base.custom_default_payroll_structure').id
