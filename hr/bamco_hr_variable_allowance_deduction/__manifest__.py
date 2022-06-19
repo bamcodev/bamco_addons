@@ -18,14 +18,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['hr_payroll','hr_work_entry_contract','bamco_hr_payroll_base'],
+    'depends': ['bamco_hr_contract', 'bamco_hr_payroll_base','hr_work_entry_contract'],
 
     # always loaded
     'data': [
         'views/hr_variable_allowance_deduction.xml',
         'views/hr_variable_allowance_deduction_type.xml',
         'security/ir.model.access.csv',
-        'views/hr_variable_allowance_deduction_category.xml',
-
     ],
 }
