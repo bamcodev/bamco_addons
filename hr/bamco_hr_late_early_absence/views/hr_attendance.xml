@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+
+        <record id="hr_attendance_form_late_early" model="ir.ui.view">
+            <field name="name">Hr Attendance Form Late Early</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='check_out']" position="after">
+                    <field name="late_attendance_hours" widget="float_time"/>
+                    <field name="early_leave_hours" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="hr_attendance_tree_late_early" model="ir.ui.view">
+            <field name="name">Hr Attendance Tree Late Early</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='check_out']" position="after">
+                    <field name="late_attendance_hours" widget="float_time"/>
+                    <field name="early_leave_hours" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

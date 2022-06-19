@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record id="view_late_early_time_interval" model="ir.ui.view">
+            <field name="name">View Late Early Time Interval Form</field>
+            <field name="model">late.early.time.interval</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <label for="first_operand" string="Condition"/>
+                        <div>
+                            <field name="first_operand" widget="float_time" nolabel="1" class="oe_inline" required="1"/>
+                            <field name="first_operator" nolabel="1" class="oe_inline" required="1"/>
+                            <span class="oe_inline">T</span>
+                            <field name="second_operator" nolabel="1" class="oe_inline"
+                                   attrs="{'invisible': [('first_operator', '=', False)]}"/>
+                            <field name="second_operand" widget="float_time" nolabel="1" class="oe_inline"
+                                   attrs="{'invisible': [('second_operator', '=', False)]}"/>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="late_early_penalty_line_ids">
+                            <tree editable="bottom">
+                                <field name="sequence"/>
+                                <field name="penalty_value" widget="float_time"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

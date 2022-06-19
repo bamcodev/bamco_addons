@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <record id="absence_salary_rule" model="hr.salary.rule">
+            <field name="name">Absence salary rule</field>
+            <field name="code">ABSENCE</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="struct_id" ref="bamco_hr_payroll_base.custom_default_payroll_structure"/>
+            <field name="sequence" eval="3"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = payslip.env['hr.payslip'].compute_absence_penalty(payslip)
+            </field>
+        </record>
+
+        <record id="late_arrive_salary_rule" model="hr.salary.rule">
+            <field name="name">Late Arrive salary rule</field>
+            <field name="code">LATENESS</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="struct_id" ref="bamco_hr_payroll_base.custom_default_payroll_structure"/>
+            <field name="sequence" eval="3"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = payslip.env['hr.payslip'].compute_late_arrive_penalty(payslip)
+            </field>
+        </record>
+
+        <record id="early_leave_salary_rule" model="hr.salary.rule">
+            <field name="name">Early Leave salary rule</field>
+            <field name="code">EARLINESS</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="struct_id" ref="bamco_hr_payroll_base.custom_default_payroll_structure"/>
+            <field name="sequence" eval="3"/>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = payslip.env['hr.payslip'].compute_early_leave_penalty(payslip)
+            </field>
+        </record>
+
+    </data>
+</odoo>
