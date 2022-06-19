@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record id="view_hr_variable_allowance_deduction_category_form" model="ir.ui.view">
+            <field name="name">Variable Allowance Deduction category</field>
+            <field name="model">hr.categories</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="amount"/>
+                      </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_variable_allowance_deduction_category_tree" model="ir.ui.view">
+            <field name="name">Variable Allowance Deduction category</field>
+            <field name="model">hr.categories</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_variable_allowance_deduction_category" model="ir.actions.act_window">
+            <field name="name">Variable Allowance Deduction categories</field>
+            <field name="res_model">hr.categories</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_hr_variable_allowance_deduction_category"
+                  parent="hr_work_entry_contract.menu_hr_payroll_configuration"
+                  action="hr_variable_allowance_deduction_category"
+                  name="Variable Allowance Deduction categories" sequence="100"/>
+
+    </data>
+</odoo>
