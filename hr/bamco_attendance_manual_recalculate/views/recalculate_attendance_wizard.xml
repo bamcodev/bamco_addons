@@ -31,7 +31,7 @@
 
         <menuitem id="recalculate_attendance_menu"
                   groups="bamco_attendance_manual_recalculate.recalculate_attendance_group"
-                  name="Recalculate Attendance" parent="hr_attendance.menu_hr_attendance_view_attendances" action="recalculate_attendance_wizard_action" />
+                  name="Recalculate Attendance" parent="hr_attendance.menu_hr_attendance_root" action="recalculate_attendance_wizard_action" />
 
 
     </data>
