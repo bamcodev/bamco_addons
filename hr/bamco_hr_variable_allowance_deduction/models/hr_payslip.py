@@ -7,18 +7,16 @@ class HrPayslip(models.Model):
     @api.model
     def create(self, vals):
         res = super(HrPayslip, self).create(vals)
-        variable_allowance_deduction = self.env['hr.variable.allowance.deduction.lines'] \
+        variable_allowance_deduction = self.env['hr.variable.allowance.deduction'] \
             .search([('employee_id', '=', res.employee_id.id),
-                     ('variable_allowance_deduction.date', '>=', res.date_from),
-                     ('variable_allowance_deduction.date', '<=', res.date_to)])
+                     ('date', '>=', res.date_from),
+                     ('date', '<=', res.date_to)])
         data = {}
         for it in variable_allowance_deduction:
-            for type in it.type:
-                if type.code not in data:
-                    data.update(
-                        {type.code: {'amount': it.compute_total_per_type(type), 'input_type_id': type.payslip_input_type_id.id}})
-                else:
-                    data[type.code]['amount'] += it.compute_total_per_type(type)
+            if it.type.code not in data:
+                data.update({it.type.code: {'amount': it.add_amount if it.type.type == 'deduction' else it.add_amount, 'input_type_id': it.type.payslip_input_type_id.id}})
+            else:
+                data[it.type.code]['amount'] += it.amount
 
         for it in data:
             if data[it]['amount']:
